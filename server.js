@@ -27,6 +27,15 @@ var currentReservations = [
     },
 ]
 
+var waitlist = [
+    {
+        id: 456,
+        name: "Gus",
+        email: "gus@yahoo.com",
+        phone: "704-111-1111"
+    }
+]
+
 // Three main pages
 app.get("/", function(req,res) {
     res.sendFile(path.join(__dirname + "/view.html"))
@@ -43,6 +52,11 @@ app.get("/reserve", function(req,res) {
 // display all current reservations
 app.get("/api/reservations", function(req,res) {
     res.json(currentReservations);
+})
+
+// displays WaitList
+app.get("/api/waitlist", function(req,res) {
+    res.json(waitlist)
 })
 
 app.listen(PORT, function() {

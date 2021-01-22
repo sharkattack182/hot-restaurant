@@ -60,7 +60,13 @@
         <div class="card">
             <h5 class="card-header">Current Reservations</h5>
             <div class="card-body append">
+          </div>
+    </div>
 
+    <div class="append-here">
+        <div class="card">
+            <h5 class="card-header">Waitlist</h5>
+            <div class="card-body waitlist">
           </div>
     </div>
 
@@ -92,6 +98,34 @@
                 let append = $(".append");
                 append.append(reserv);
              })
+         })
+
+         $.get("/api/waitlist", function(response) {
+             let count = 0;
+            response.forEach(waiting => {
+                count++
+                 console.log(waiting);
+                 let wait = $("<div>");
+                wait.addClass("reserveCard");
+                let newTable = $("<h3>");
+                newTable.text("Table #" + count)
+                wait.append(newTable);
+                let hr = $("<hr>");
+                wait.append(hr);
+                let id = $("<h4>");
+                id.text(waiting.id);
+                let name = $("<h4>");
+                name.text(waiting.name);
+                let email = $("<h4>");
+                email.text(waiting.email);
+                let phone = $("<h4>");
+                phone.text(waiting.phone);
+                wait.append(id, name, email, phone);
+
+                let waitlist = $(".waitlist");
+                waitlist.append(wait);
+            })
+
          })
      }   
 
