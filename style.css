@@ -1,0 +1,17 @@
+.jumbotron {
+    width: 80vw;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 10vh;
+    background-color: lightgrey;
+    padding: 10vh;
+    border-radius: 10px;
+}
+
+.api {
+    width: 80vw;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 3vh;
+}
