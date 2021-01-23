@@ -14,7 +14,7 @@ HTML <img src="https://progress-bar.dev/86/">
 CSS <img src="https://progress-bar.dev/0/">
 
 ## Links
-[GitHub](https://github.com/sharkattack182/starwars-app)
+[GitHub](https://github.com/sharkattack182/hot-restaurant)
 <br>
 To download this file please click the green code button above.
 
