@@ -5,6 +5,9 @@ const { getMaxListeners } = require("process");
 var app = express();
 var PORT = 6060;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 
 var currentReservations = [
     {
@@ -57,6 +60,13 @@ app.get("/api/reservations", function(req,res) {
 // displays WaitList
 app.get("/api/waitlist", function(req,res) {
     res.json(waitlist)
+})
+
+// adding a new reservation 
+app.post("/api/waitlist", function(req,res) {
+    var newReservation = req.body;
+
+    console.log(newReservation);
 })
 
 app.listen(PORT, function() {
