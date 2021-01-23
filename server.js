@@ -23,7 +23,7 @@ var currentReservations = [
         phone: "607-222-1111"
     },
     {
-        id: 333,
+        id: 231,
         name: "Brian Courtney",
         email: "brian@gmail.com",
         phone: "607-111-3333"
@@ -32,9 +32,9 @@ var currentReservations = [
 
 var waitlist = [
     {
-        id: 456,
-        name: "Gus",
-        email: "gus@yahoo.com",
+        id: 132,
+        name: "Dan Mylett",
+        email: "dan@yahoo.com",
         phone: "704-111-1111"
     }
 ]
@@ -67,6 +67,8 @@ app.post("/api/waitlist", function(req,res) {
     var newReservation = req.body;
 
     console.log(newReservation);
+    waitlist.push(newReservation);
+    res.json(newReservation);
 })
 
 app.listen(PORT, function() {
