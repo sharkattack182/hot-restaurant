@@ -3,7 +3,7 @@ var path = require("path");
 const { getMaxListeners } = require("process");
 
 var app = express();
-var PORT = 6060;
+var PORT = process.env.PORT || 6060;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
